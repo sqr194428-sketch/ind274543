@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082b4c">
+  <meta name="description" content="أبو عادل لشراء المكيفات بالقصيم — خدمة موثوقة لشراء المكيفات والتقييم السريع والتعامل الواضح.">
+  <title>أبو عادل | شراء المكيفات بالقصيم</title>
+  <style>
+    :root {
+      --ink: #09263f;
+      --navy: #082b4c;
+      --navy-2: #0e4168;
+      --blue: #1597c3;
+      --cyan: #62d8e7;
+      --orange: #ff8d39;
+      --yellow: #ffc95b;
+      --cream: #fffaf0;
+      --paper: #fffdf8;
+      --muted: #5d7282;
+      --line: rgba(9, 38, 63, .11);
+      --shadow: 0 24px 70px rgba(8, 43, 76, .14);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 7% 9%, rgba(98, 216, 231, .20), transparent 24rem),
+        radial-gradient(circle at 95% 38%, rgba(255, 201, 91, .17), transparent 22rem),
+        var(--cream);
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .page-shell { width: min(1180px, calc(100% - 32px)); margin-inline: auto; }
+
+    .top-strip {
+      background: var(--navy);
+      color: #dff8fc;
+      font-size: .83rem;
+      letter-spacing: .01em;
+    }
+    .top-strip-inner {
+      min-height: 38px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .top-strip span { display: inline-flex; align-items: center; gap: 7px; }
+    .top-strip .dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #65e6b2;
+      box-shadow: 0 0 0 5px rgba(101, 230, 178, .12);
+    }
+
+    header {
+      padding: 18px 0;
+      position: relative;
+      z-index: 5;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 46px; height: 46px;
+      color: var(--navy);
+      background: var(--cyan);
+      border-radius: 15px 15px 15px 5px;
+      box-shadow: 7px 7px 0 rgba(255, 141, 57, .22);
+      font-size: 1.55rem;
+    }
+    .brand strong { display: block; font-size: 1.08rem; line-height: 1.1; }
+    .brand small { display: block; color: var(--muted); font-size: .73rem; margin-top: 4px; }
+    nav { display: flex; gap: 25px; color: #426174; font-size: .9rem; font-weight: 700; }
+    nav a { transition: color .2s ease; }
+    nav a:hover { color: var(--orange); }
+    .header-cta {
+      color: white;
+      background: var(--navy);
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: .86rem;
+      font-weight: 700;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .header-cta:hover { transform: translateY(-2px); background: var(--navy-2); }
+
+    .hero {
+      min-height: 555px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 48px;
+      padding: 50px 0 64px;
+      position: relative;
+    }
+    .hero-copy { position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      color: #0b637a;
+      background: #d8f8fa;
+      border: 1px solid rgba(21, 151, 195, .14);
+      border-radius: 99px;
+      font-size: .8rem;
+      font-weight: 800;
+    }
+    .eyebrow::before { content: "✦"; color: var(--orange); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 650px;
+      margin: 20px 0 17px;
+      color: var(--navy);
+      font-size: clamp(2.35rem, 5vw, 4.55rem);
+      line-height: 1.13;
+      letter-spacing: -.06em;
+    }
+    h1 em { color: var(--orange); font-style: normal; }
+    .hero-copy > p {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.9;
+      margin-bottom: 27px;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 13px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      font-size: .93rem;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary {
+      color: white;
+      background: var(--orange);
+      box-shadow: 0 10px 23px rgba(255, 141, 57, .26);
+    }
+    .btn-primary:hover { background: #ed7622; box-shadow: 0 13px 29px rgba(255, 141, 57, .32); }
+    .btn-secondary { color: var(--navy); background: white; border-color: var(--line); }
+    .btn-secondary:hover { box-shadow: 0 8px 18px rgba(8, 43, 76, .10); }
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 22px;
+      color: #66808f;
+      font-size: .82rem;
+    }
+    .hero-note b { color: var(--navy); }
+
+    .hero-art {
+      min-height: 415px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+    .hero-art::before {
+      content: "";
+      position: absolute;
+      width: min(420px, 92%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--cyan);
+      opacity: .5;
+      filter: blur(1px);
+    }
+    .art-card {
+      width: min(410px, 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 22px;
+      border-radius: 28px;
+      color: white;
+      background: linear-gradient(145deg, #0e4168, #082b4c);
+      box-shadow: 18px 22px 0 rgba(8, 43, 76, .08), var(--shadow);
+      transform: rotate(2deg);
+    }
+    .art-card::after {
+      content: "بارد • واضح • مضمون";
+      position: absolute;
+      left: -45px;
+      bottom: 26px;
+      padding: 7px 44px;
+      color: var(--navy);
+      background: var(--yellow);
+      font-size: .72rem;
+      font-weight: 900;
+      transform: rotate(-45deg);
+    }
+    .art-top { display: flex; justify-content: space-between; color: #a8eaf0; font-size: .76rem; }
+    .art-top b { color: white; font-size: .94rem; }
+    .ac-illustration { display: block; width: 100%; height: 230px; margin: 9px auto 2px; }
+    .art-bottom { display: flex; justify-content: space-between; align-items: end; gap: 10px; }
+    .art-bottom strong { display: block; font-size: 1.18rem; }
+    .art-bottom span { display: block; color: #b9dce9; font-size: .75rem; margin-top: 3px; }
+    .art-sticker {
+      width: 61px; height: 61px;
+      display: grid; place-items: center;
+      color: var(--navy);
+      background: var(--yellow);
+      border-radius: 50%;
+      font-size: .7rem;
+      line-height: 1.25;
+      text-align: center;
+      font-weight: 900;
+      transform: rotate(-8deg);
+    }
+
+    .trust-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: hidden;
+      margin-bottom: 75px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 14px 35px rgba(8, 43, 76, .06);
+    }
+    .trust-item { display: flex; gap: 13px; align-items: center; padding: 17px 23px; }
+    .trust-item + .trust-item { border-right: 1px solid var(--line); }
+    .trust-icon {
+      flex: 0 0 38px;
+      display: grid; place-items: center;
+      width: 38px; height: 38px;
+      color: #0b7891;
+      background: #e5fafb;
+      border-radius: 11px;
+      font-size: 1.12rem;
+    }
+    .trust-item strong { display: block; font-size: .9rem; }
+    .trust-item span { color: var(--muted); display: block; font-size: .74rem; margin-top: 2px; }
+
+    section { padding: 58px 0; }
+    .section-heading { max-width: 640px; margin-bottom: 29px; }
+    .section-kicker { color: var(--orange); font-size: .78rem; font-weight: 900; letter-spacing: .08em; }
+    h2 { color: var(--navy); font-size: clamp(1.85rem, 3vw, 2.7rem); line-height: 1.25; letter-spacing: -.045em; margin: 7px 0 10px; }
+    .section-heading p { color: var(--muted); margin-bottom: 0; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .service-card {
+      position: relative;
+      padding: 26px 23px 23px;
+      min-height: 205px;
+      background: rgba(255, 255, 255, .72);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .service-card:hover { transform: translateY(-6px); border-color: rgba(21, 151, 195, .35); box-shadow: 0 18px 38px rgba(8, 43, 76, .10); }
+    .service-number { color: #a5c6ce; font-size: .76rem; font-weight: 900; }
+    .service-icon { margin: 16px 0 11px; color: var(--blue); font-size: 1.85rem; line-height: 1; }
+    .service-card h3 { margin-bottom: 5px; font-size: 1.02rem; }
+    .service-card p { color: var(--muted); font-size: .82rem; line-height: 1.8; margin-bottom: 0; }
+
+    .about-section { padding-top: 95px; }
+    .about-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 65px; align-items: center; }
+    .about-card {
+      position: relative;
+      padding: 30px;
+      color: white;
+      background: var(--navy);
+      border-radius: var(--radius);
+      box-shadow: 14px 14px 0 rgba(255, 201, 91, .63);
+      overflow: hidden;
+    }
+    .about-card::before, .about-card::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(98, 216, 231, .26);
+      border-radius: 50%;
+    }
+    .about-card::before { width: 220px; height: 220px; left: -92px; top: -100px; }
+    .about-card::after { width: 160px; height: 160px; right: -70px; bottom: -70px; }
+    .about-card > * { position: relative; z-index: 1; }
+    .quote-mark { color: var(--yellow); font-family: Georgia, serif; font-size: 4.3rem; line-height: .65; }
+    .about-card h3 { margin: 16px 0 12px; font-size: 1.4rem; }
+    .about-card p { color: #c5e1e8; font-size: .9rem; line-height: 1.9; }
+    .signature { display: flex; gap: 10px; align-items: center; margin-top: 22px; }
+    .signature-mark {
+      display: grid; place-items: center;
+      width: 37px; height: 37px;
+      color: var(--navy);
+      background: var(--cyan);
+      border-radius: 50%;
+      font-weight: 900;
+    }
+    .signature strong { display: block; font-size: .86rem; }
+    .signature span { display: block; color: #9dc4ce; font-size: .72rem; }
+    .checks { display: grid; gap: 17px; margin-top: 26px; }
+    .check { display: flex; gap: 12px; align-items: flex-start; }
+    .check-mark {
+      flex: 0 0 25px;
+      display: grid; place-items: center;
+      width: 25px; height: 25px;
+      color: white; background: var(--blue);
+      border-radius: 50%;
+      font-size: .76rem;
+      font-weight: 900;
+    }
+    .check strong { display: block; font-size: .92rem; }
+    .check span { display: block; color: var(--muted); font-size: .79rem; margin-top: 1px; }
+
+    .reviews-section { padding-bottom: 95px; }
+    .reviews-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+    .rating { color: var(--navy); font-size: .9rem; white-space: nowrap; }
+    .rating b { color: var(--orange); font-size: 1.2rem; letter-spacing: 2px; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .review {
+      padding: 23px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .stars { color: var(--orange); letter-spacing: 2px; font-size: .8rem; }
+    .review p { color: #456273; font-size: .86rem; line-height: 1.85; margin: 14px 0 17px; }
+    .review-author { display: flex; align-items: center; gap: 9px; }
+    .avatar {
+      display: grid; place-items: center;
+      width: 34px; height: 34px;
+      color: var(--navy); background: var(--yellow);
+      border-radius: 50%;
+      font-size: .8rem; font-weight: 900;
+    }
+    .review-author strong { display: block; font-size: .78rem; }
+    .review-author span { display: block; color: #8a9ca6; font-size: .68rem; }
+
+    .contact-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding: 31px 37px;
+      color: white;
+      background: linear-gradient(115deg, var(--navy), #0d6180);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .contact-box h2 { color: white; margin-bottom: 5px; font-size: clamp(1.5rem, 3vw, 2.15rem); }
+    .contact-box p { color: #c0e4e9; margin: 0; font-size: .88rem; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn-light { color: var(--navy); background: white; }
+    .btn-whatsapp { color: #063e2d; background: #65e6b2; }
+    .btn-whatsapp:hover { background: #78f0c1; }
+
+    footer { padding: 40px 0 97px; }
+    .footer-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: #78909d;
+      font-size: .75rem;
+      border-top: 1px solid var(--line);
+      padding-top: 23px;
+    }
+    .designer { color: #507181; }
+    .designer a { color: var(--orange); font-weight: 800; }
+    .designer a:hover { text-decoration: underline; }
+
+    .floating-contact {
+      position: fixed;
+      z-index: 20;
+      left: 16px;
+      top: 50%;
+      display: grid;
+      gap: 8px;
+      transform: translateY(-50%);
+    }
+    .floating-contact a {
+      display: grid;
+      place-items: center;
+      width: 45px; height: 45px;
+      color: white;
+      border-radius: 13px;
+      box-shadow: 0 7px 18px rgba(8, 43, 76, .18);
+      transition: transform .2s ease;
+      font-size: 1.2rem;
+    }
+    .floating-contact a:hover { transform: scale(1.1); }
+    .floating-call { background: var(--orange); }
+    .floating-wa { background: #20b978; }
+    .floating-contact span {
+      position: absolute;
+      right: 55px;
+      white-space: nowrap;
+      padding: 4px 8px;
+      color: white;
+      background: var(--navy);
+      border-radius: 6px;
+      opacity: 0;
+      pointer-events: none;
+      font-size: .68rem;
+      transition: opacity .2s ease;
+    }
+    .floating-contact a:hover + span { opacity: 1; }
+
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    :focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+
+    @media (max-width: 840px) {
+      .hero { grid-template-columns: 1fr; padding-top: 35px; gap: 18px; }
+      .hero-copy { text-align: center; }
+      .hero-copy > p { margin-inline: auto; }
+      .actions, .hero-note { justify-content: center; }
+      .hero-art { min-height: 340px; }
+      .about-layout { grid-template-columns: 1fr; gap: 45px; }
+      .about-card { max-width: 500px; }
+      .contact-box { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 650px) {
+      .page-shell { width: min(100% - 24px, 520px); }
+      .top-strip-inner { justify-content: center; min-height: 34px; }
+      .top-strip-inner span:last-child { display: none; }
+      header { padding: 13px 0; }
+      nav { display: none; }
+      .header-cta { padding: 9px 12px; font-size: .77rem; }
+      .brand small { font-size: .66rem; }
+      .brand-mark { width: 40px; height: 40px; font-size: 1.25rem; }
+      h1 { font-size: clamp(2.1rem, 12vw, 3.2rem); margin-top: 15px; }
+      .hero { padding: 32px 0 38px; }
+      .hero-copy > p { font-size: .94rem; }
+      .hero-art { min-height: 300px; }
+      .art-card { width: 92%; }
+      .ac-illustration { height: 190px; }
+      .trust-bar { grid-template-columns: 1fr; margin-bottom: 42px; }
+      .trust-item { padding: 13px 17px; }
+      .trust-item + .trust-item { border-right: 0; border-top: 1px solid var(--line); }
+      section { padding: 42px 0; }
+      .services-grid, .reviews-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: auto; }
+      .about-section { padding-top: 55px; }
+      .reviews-section { padding-bottom: 60px; }
+      .reviews-head { display: block; }
+      .rating { margin-top: 14px; }
+      .contact-box { padding: 25px 21px; border-radius: 19px; }
+      .contact-actions { width: 100%; }
+      .contact-actions .btn { flex: 1; padding-inline: 10px; font-size: .8rem; }
+      .footer-line { align-items: flex-start; flex-direction: column; gap: 9px; }
+      .floating-contact {
+        right: 12px;
+        left: 12px;
+        top: auto;
+        bottom: 12px;
+        display: flex;
+        justify-content: center;
+        transform: none;
+        padding: 7px;
+        background: rgba(8, 43, 76, .93);
+        border-radius: 14px;
+        box-shadow: 0 8px 25px rgba(8, 43, 76, .23);
+      }
+      .floating-contact a { width: 42px; height: 37px; border-radius: 9px; }
+      .floating-contact span { display: none; }
+      footer { padding-bottom: 85px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-strip">
+    <div class="page-shell top-strip-inner">
+      <span><i class="dot"></i> خدمة موثوقة في القصيم</span>
+      <span>تواصل مباشر — نرد عليك بكل وضوح</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="page-shell navbar">
+      <a class="brand" href="#home" aria-label="أبو عادل لشراء المكيفات">
+        <span class="brand-mark">❄</span>
+        <span><strong>أبو عادل</strong><small>لشراء المكيفات بالقصيم</small></span>
+      </a>
+      <nav aria-label="التنقل الرئيسي">
+        <a href="#services">الخدمات</a>
+        <a href="#about">من نحن</a>
+        <a href="#reviews">آراء العملاء</a>
+      </nav>
+      <a class="header-cta" href="tel:0540266592">اتصل الآن <span aria-hidden="true">←</span></a>
+    </div>
+  </header>
+
+  <main id="home">
+    <div class="page-shell">
+      <section class="hero">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">نشتري مكيفك بسهولة</span>
+          <h1>عندك مكيف؟<br><em>خلّ البيع علينا.</em></h1>
+          <p>أبو عادل لشراء المكيفات بالقصيم. تقييم واضح، تعامل محترم، وخطوة بيع أسهل بدون تعقيد أو انتظار طويل.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://wa.me/966540266592" target="_blank" rel="noopener">💬 راسلنا واتساب</a>
+            <a class="btn btn-secondary" href="tel:0540266592">☎ اتصل مباشرة</a>
+          </div>
+          <div class="hero-note"><span>✓</span> <b>رد سريع</b> وتواصل مباشر مع أبو عادل</div>
+        </div>
+
+        <div class="hero-art reveal" aria-label="رسم توضيحي لمكيف">
+          <div class="art-card">
+            <div class="art-top"><b>أبو عادل</b><span>القصيم • السعودية</span></div>
+            <svg class="ac-illustration" viewBox="0 0 430 250" role="img" aria-label="مكيف هواء">
+              <defs>
+                <linearGradient id="unit" x1="0" x2="1">
+                  <stop offset="0" stop-color="#f7ffff"/>
+                  <stop offset="1" stop-color="#bdebf0"/>
+                </linearGradient>
+                <linearGradient id="shadow" x1="0" x2="1">
+                  <stop offset="0" stop-color="#62d8e7" stop-opacity=".35"/>
+                  <stop offset="1" stop-color="#62d8e7" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="218" cy="213" rx="144" ry="17" fill="url(#shadow)"/>
+              <path d="M92 94c0-18 15-33 33-33h187c18 0 33 15 33 33v89c0 15-12 27-27 27H119c-15 0-27-12-27-27V94Z" fill="url(#unit)"/>
+              <path d="M93 103c0-18 14-32 32-32h187c17 0 31 14 31 32v13H93v-13Z" fill="#fff"/>
+              <path d="M119 138h198c0 29-22 52-50 52H169c-28 0-50-23-50-52Z" fill="#d1f1f2"/>
+              <path d="M141 150h154" stroke="#83cfd7" stroke-width="5" stroke-linecap="round"/>
+              <path d="M146 163h145" stroke="#83cfd7" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="283" cy="91" r="6" fill="#ff8d39"/>
+              <path d="M163 60c4-20 1-30-7-43M208 60c4-20 1-30-7-43M253 60c4-20 1-30-7-43" fill="none" stroke="#62d8e7" stroke-width="5" stroke-linecap="round" opacity=".82"/>
+              <path d="M181 207v13M270 207v13" stroke="#bdebf0" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+            <div class="art-bottom">
+              <div><strong>بيع أسهل. سعر أوضح.</strong><span>اتصل بنا وخلّنا نساعدك</span></div>
+              <div class="art-sticker">ثقة<br>تستاهلها</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-bar reveal">
+        <div class="trust-item"><div class="trust-icon">⚡</div><div><strong>رد سريع</strong><span>تواصل مباشر بدون تعقيد</span></div></div>
+        <div class="trust-item"><div class="trust-icon">◉</div><div><strong>تقييم واضح</strong><span>وضوح من أول مكالمة</span></div></div>
+        <div class="trust-item"><div class="trust-icon">♡</div><div><strong>تعامل محترم</strong><span>نحافظ على وقتك وراحتك</span></div></div>
+      </div>
+
+      <section id="services">
+        <div class="section-heading reveal">
+          <span class="section-kicker">خدماتنا</span>
+          <h2>نخلّي موضوع المكيف أبسط.</h2>
+          <p>من أول تواصل إلى إتمام البيع، نحرص أن تكون الخطوات مفهومة ومريحة.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal"><span class="service-number">01</span><div class="service-icon">❄</div><h3>شراء المكيفات</h3><p>نستقبل طلبك ونقيّم المكيف بطريقة واضحة ومباشرة.</p></article>
+          <article class="service-card reveal"><span class="service-number">02</span><div class="service-icon">⌁</div><h3>تواصل سريع</h3><p>أرسل التفاصيل أو تواصل معنا مباشرة لرد سريع على استفسارك.</p></article>
+          <article class="service-card reveal"><span class="service-number">03</span><div class="service-icon">✓</div><h3>اتفاق واضح</h3><p>نتعامل معك بوضوح واحترام، من غير وعود مبهمة أو خطوات مخفية.</p></article>
+        </div>
+      </section>
+
+      <section class="about-section" id="about">
+        <div class="about-layout">
+          <div class="about-card reveal">
+            <div class="quote-mark">“</div>
+            <h3>الوضوح أولاً، دائماً.</h3>
+            <p>نؤمن أن بيع المكيف ما يحتاج يكون تجربة متعبة. لذلك نسمع منك، نوضح لك، ونمشي معك بخطوات بسيطة.</p>
+            <div class="signature"><div class="signature-mark">أ</div><div><strong>أبو عادل</strong><span>خدمة شراء المكيفات — القصيم</span></div></div>
+          </div>
+          <div class="reveal">
+            <div class="section-heading">
+              <span class="section-kicker">من نحن</span>
+              <h2>شخص تتواصل معه، مو نموذج تنتظر رده.</h2>
+              <p>خدمة محلية تركز على سرعة الرد، صدق التعامل، واحترام وقت العميل في كل تواصل.</p>
+            </div>
+            <div class="checks">
+              <div class="check"><div class="check-mark">✓</div><div><strong>خبرة وفهم للسوق المحلي</strong><span>نعرف احتياج أهل القصيم ونتعامل معه بواقعية.</span></div></div>
+              <div class="check"><div class="check-mark">✓</div><div><strong>تواصل إنساني ومباشر</strong><span>كل سؤال له جواب واضح، وكل خطوة متفق عليها.</span></div></div>
+              <div class="check"><div class="check-mark">✓</div><div><strong>راحة بالك تهمنا</strong><span>نبني تعاملنا على الاحترام والالتزام بالاتفاق.</span></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" class="reviews-section">
+        <div class="reviews-head section-heading reveal">
+          <div><span class="section-kicker">آراء العملاء</span><h2>كلام طيب من ناس جرّبوا الخدمة.</h2></div>
+          <div class="rating"><b>★★★★★</b><br>تجارب طيبة وتعامل واضح</div>
+        </div>
+        <div class="reviews-grid">
+          <article class="review reveal"><div class="stars">★★★★★</div><p>“تواصلت مع أبو عادل وكان الرد سريع والتعامل ممتاز. كل شيء كان واضح من البداية.”</p><div class="review-author"><div class="avatar">م</div><div><strong>محمد</strong><span>من القصيم</span></div></div></article>
+          <article class="review reveal"><div class="stars">★★★★★</div><p>“شخص محترم وملتزم بكلامه، خلصت الموضوع بسهولة وبدون ما أضيع وقت.”</p><div class="review-author"><div class="avatar">س</div><div><strong>سعود</strong><span>عميل سابق</span></div></div></article>
+          <article class="review reveal"><div class="stars">★★★★★</div><p>“الخدمة ممتازة والرد على الواتساب سريع. أنصح بالتواصل معه لمن يريد بيع مكيفه.”</p><div class="review-author"><div class="avatar">ع</div><div><strong>عبدالله</strong><span>عميل سابق</span></div></div></article>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div class="contact-box reveal">
+          <div><h2>جاهز تبدأ؟ تواصل الآن.</h2><p>أرسل لنا على واتساب أو اتصل مباشرة — أبو عادل بانتظارك.</p></div>
+          <div class="contact-actions">
+            <a class="btn btn-whatsapp" href="https://wa.me/966540266592" target="_blank" rel="noopener">💬 واتساب</a>
+            <a class="btn btn-light" href="tel:0540266592">☎ 0540266592</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="page-shell footer-line">
+      <span>© <span id="year">2026</span> أبو عادل — لشراء المكيفات بالقصيم</span>
+      <span class="designer">تم التصميم بواسطة <a href="https://wa.me/201029095046" target="_blank" rel="noopener">م. نجوى إبراهيم</a></span>
+    </div>
+  </footer>
+
+  <div class="floating-contact" aria-label="طرق التواصل السريعة">
+    <a class="floating-call" href="tel:0540266592" aria-label="اتصال بأبو عادل">☎</a><span>اتصال</span>
+    <a class="floating-wa" href="https://wa.me/966540266592" target="_blank" rel="noopener" aria-label="مراسلة أبو عادل على واتساب">◉</a><span>واتساب</span>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const items = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach((item) => observer.observe(item));
+    } else {
+      items.forEach((item) => item.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
